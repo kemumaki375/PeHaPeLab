@@ -8,7 +8,7 @@ sort($fn_list);
 
 function get_page() : string {
   global $fn_list, $fn;
-  if ($fn == "_index_") return reset($fn_list[0]);
+  if ($fn == "_index_") return 'about.php';
   if (in_array($fn, $fn_list)) {
     return "page_string/string.".$fn.".php";
   } else {
