@@ -13,7 +13,7 @@
 </head>
 <body>
 <?php include_once 'top_nav.php' ?>
-<div class="container mt-md-4 mb-md-5">
+<div class="container-fluid mt-md-4 mb-md-5">
     <div class="row mt-3">
         <nav class="col-md-2 col-sm-12 ms-md-3 d-none d-sm-block">
             <strong>Index</strong>
@@ -26,7 +26,7 @@
         <main class="col">
             <div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col col-sm-12">
                         <?php include_once get_page() ?>
                     </div>
                     <div class="col-3 offset-md-1 mt-2">
