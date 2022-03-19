@@ -64,7 +64,7 @@ function html_info($info) : string {
   ob_start(); ?>
   <div class="d-flex justify-content-between">
     <h5 class="card-title d-inline"><?=$info["name"]?></h5>
-    <a class="card-link" href="<?='https://www.php.net/manual/en/function.'.$info["name"]?>" target="_blank">
+    <a class="card-link" href="<?='https://www.php.net/manual/en/function.'.str_replace( "_","-", $info["name"]).".php"?>" target="_blank">
       doc
     </a>
 
