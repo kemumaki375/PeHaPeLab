@@ -88,13 +88,14 @@ function html_call_result($output, $help = '') : string {
 }
 
 function html_input_arg($model, $param_name, $help) : string {
-ob_start(); ?>
-  <label class="form-label font-monospace fw-bolder">$<?=$param_name?></label>
+  ob_start(); ?>
+  <label class="col-4 col-form-label font-monospace">$<?=$param_name?></label>
+  <div class="col-8" id="res_output">
   <input type="text" name="<?=$param_name?>" class="form-control form-control-sm"
          value="<?= $model[$param_name] ?? '' ?>">
 
   <p class="form-text"><?=$help?>
-
-<?php
+  </div>
+  <?php
   return ob_get_clean();
 }

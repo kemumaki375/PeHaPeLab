@@ -23,13 +23,13 @@ $output = safe_call(function () use ($model) {
       <?= html_info($info) ?>
     </div>
     <di class="card-body">
-      <form class="pb-2">
+      <form class="pt-1">
         <?= html_form_common() ?>
-        <div class="mb-3">
+        <div class="mb-3 row">
           <?=html_input_arg($model, "string",
             "The data.")?>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 row">
           <?=html_input_arg($model, "characters",
             "A list of characters to be escaped.")?>
         </div>

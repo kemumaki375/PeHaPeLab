@@ -22,9 +22,9 @@ $output = safe_call(function () use ($model) {
       <?= html_info($info) ?>
     </div>
     <di class="card-body">
-      <form>
+      <form class="mb-2">
         <?= html_form_common() ?>
-        <div class="mb-3 mt-2">
+        <div class="mb-3 row">
           <?=html_input_arg($model, "string",
             "The data.")?>
         </div>

@@ -23,25 +23,17 @@ $output = safe_call(function () use ($model) {
       <?= html_info($info) ?>
 
     </div>
-    <di class="card-body">
-      <form>
+    <div class="card-body">
+      <form class="pt-1">
         <?= html_form_common() ?>
-        <div class="mb-3 mt-2">
-          <label class="form-label font-monospace fw-bolder">$string</label>
-          <input type="text" name="string" class="form-control form-control-sm"
-                 value="<?= $model['string'] ?>">
-          <p class="form-text">
-            The string to be repeated.
-          </p>
+        <div class="mb-3 row">
+          <?=html_input_arg($model, "string",
+            "The string to be repeated.")?>
         </div>
-        <div class="mb-3">
-          <label class="form-label font-monospace fw-bolder">$times</label>
-          <input type="text" name="times" class="form-control form-control-sm" value="<?= $model['times'] ?>">
-          <p class="form-text">
-            Number of time the string should be repeated. <code>Times</code> has to be greater than or equal
-            to 0. If the
-            <code>times</code> is set to 0, the function will return an empty string.
-          </p>
+        <div class="mb-3 row">
+          <?=html_input_arg($model, "times",
+            "Number of time the string should be repeated. <code>Times</code> has to be greater than or equal
+            to 0. If the <code>times</code> is set to 0, the function will return an empty string.")?>
         </div>
         <div class="mb-3 d-flex justify-content-end">
           <button type="submit" class="btn btn-primary">Submit</button>
@@ -50,6 +42,6 @@ $output = safe_call(function () use ($model) {
           <?=html_call_result($output) ?>
         </div>
       </form>
-    </di>
+    </div>
   </div>
 </div>

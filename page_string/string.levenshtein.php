@@ -42,29 +42,29 @@ $output = safe_call(function () use ($model) {
 
     </div>
     <di class="card-body">
-      <form>
+      <form class="pt-1">
         <?= html_form_common() ?>
-        <div class="mb-3">
+        <div class="mb-3 row">
           <?=html_input_arg($model, "string1",
             "One of the strings being evaluated for Levenshtein distance.")?>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 row">
           <?=html_input_arg($model, "string2",
             "One of the strings being evaluated for Levenshtein distance.")?>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 row">
           <?=html_input_arg($model, "insertion_cost",
             "Defines the cost of insertion.")?>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 row">
           <?=html_input_arg($model, "replacement_cost",
             "Defines the cost of replacement.")?>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 row">
           <?=html_input_arg($model, "deletion_cost",
             "Defines the cost of replacement.")?>
         </div>

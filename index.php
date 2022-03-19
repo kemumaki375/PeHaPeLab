@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <title><?=html_title()?></title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    .current_pages {
+        background:yellow ;
+    }
+  </style>
 </head>
 <body>
 <?php include_once 'top_nav.php' ?>
@@ -15,8 +20,7 @@
             <ul class="list-unstyled">
               <?php $sorted = array_keys($routes); sort($sorted); ?>
               <?php foreach ($sorted as $k) : ?>
-                <li><a href="index.php?fn=<?=$k?>"><?=$k?></a></li>
-
+                <li><a href="index.php?fn=<?=$k?>" class="<?=($k==$fn)?"current_pages":""?>"><?=$k?></a></li>
               <?php endforeach;?>
             </ul>
         </nav>
@@ -26,7 +30,7 @@
                     <div class="col">
                         <?php include_once get_page() ?>
                     </div>
-                    <div class="col-md-4 offset-md-1 mt-2">
+                    <div class="col-3 offset-md-1 mt-2">
                         <!--
                         <h4>Examples</h4>
                         <ul class="list-group">

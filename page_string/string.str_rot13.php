@@ -23,9 +23,9 @@ $output = safe_call(function () use ($model) {
       <?= html_info($info) ?>
     </div>
     <di class="card-body">
-      <form class="pt-2">
+      <form class="pt-1">
         <?= html_form_common() ?>
-        <div class="mb-3">
+        <div class="mb-3 row">
           <?=html_input_arg($model, "string",
             "The input string.")?>
         </div>
