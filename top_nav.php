@@ -7,12 +7,20 @@
     <div class="collapse navbar-collapse ms-md-5"  id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">[Home]</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/kemumaki375/PeHaPeLab">Source Code</a>
+          <a target="_blank" class="nav-link" href="https://github.com/kemumaki375/PeHaPeLab">[Sources]</a>
         </li>
-
+        <li class="nav-item">
+          <a target="_blank" class="nav-link" href="https://www.php.net/manual/en/book.strings.php">[PHP String Functions]</a>
+        </li>
+        <li class="nav-item">
+          <a target="_blank" class="nav-link" href="https://teknologiumum.com/">[Blog Teknum]</a>
+        </li>
+        <li class="nav-item">
+          <a target="_blank" class="nav-link" href="https://github.com/teknologi-umum/pehape">[pehape]</a>
+        </li>
 
       </ul>
     </div>

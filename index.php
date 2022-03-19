@@ -18,8 +18,7 @@
         <nav class="col-md-2 col-sm-12 ms-md-3 d-none d-sm-block">
             <strong>Index</strong>
             <ul class="list-unstyled">
-              <?php $sorted = array_keys($routes); sort($sorted); ?>
-              <?php foreach ($sorted as $k) : ?>
+              <?php foreach ($fn_list as $k) : ?>
                 <li><a href="index.php?fn=<?=$k?>" class="<?=($k==$fn)?"current_pages":""?>"><?=$k?></a></li>
               <?php endforeach;?>
             </ul>

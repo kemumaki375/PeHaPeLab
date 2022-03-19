@@ -2,21 +2,15 @@
 
 $fn = $_GET["fn"] ?? "_index_";
 
-$routes = array(
-  "crc32" => "page_string/string.crc32.php",
-  "str_repeat" => "page_string/string.str_repeat.php",
-  "levenshtein" => "page_string/string.levenshtein.php",
-  "addcslashes" => "page_string/string.addcslashes.php",
-  "str_rot13" => "page_string/string.str_rot13.php",
-);
-
-ksort($routes);
+$fn_list = ["crc32", "str_repeat", "levenshtein", "str_rot13", "chop", "rtrim",
+  "lcfirst", "nl2br"];
+sort($fn_list);
 
 function get_page() : string {
-  global $routes, $fn;
-  if ($fn == "_index_") return reset($routes);
-  if (array_key_exists($fn, $routes)) {
-    return $routes[$fn];
+  global $fn_list, $fn;
+  if ($fn == "_index_") return reset($fn_list[0]);
+  if (in_array($fn, $fn_list)) {
+    return "page_string/string.".$fn.".php";
   } else {
     return "404.php";
   }
@@ -81,20 +75,42 @@ function html_call_result($output, $help = '') : string {
   <label class="form-label fw-bold">Output</label>
   <textarea readonly class="form-control font-monospace bg-light text-primary"><?= $output ?></textarea>
   <p class="form-text">
-    <?=$help?>
+    <?=htmlentities($help)?>
   </p>
   <?php
   return ob_get_clean();
 }
 
-function html_input_arg($model, $param_name, $help) : string {
+function html_input_text($model, $param_name, $help) : string {
   ob_start(); ?>
   <label class="col-4 col-form-label font-monospace">$<?=$param_name?></label>
   <div class="col-8" id="res_output">
   <input type="text" name="<?=$param_name?>" class="form-control form-control-sm"
          value="<?= $model[$param_name] ?? '' ?>">
 
-  <p class="form-text"><?=$help?>
+    <p class="form-text"><?=htmlentities($help)?></p>
+  </div>
+  <?php
+  return ob_get_clean();
+}
+
+function html_input_textarea($model, $param_name,  $help = '', $row_count = 4) : string {
+  ob_start(); ?>
+  <label class="col-4 col-form-label font-monospace">$<?=$param_name?></label>
+  <div class="col-8" id="res_output">
+    <textarea name="<?=$param_name?>" class="form-control" rows="<?=$row_count?>"><?= $model[$param_name] ?? '' ?></textarea>
+    <p class="form-text"><?=$help?></p>
+  </div>
+  <?php
+  return ob_get_clean();
+}
+
+function html_input_checkbox($model, $param_name, $help = '') : string {
+  ob_start(); ?>
+  <label class="col-4 col-form-label font-monospace">$<?=$param_name?></label>
+  <div class="col-8" id="res_output">
+    <input type="checkbox" name="<?=$param_name?>" class="form-check-input mt-2" <?=$model[$param_name] == "true" ? "checked": ""?> value="true">
+    <p class="form-text"><?=$help?></p>
   </div>
   <?php
   return ob_get_clean();

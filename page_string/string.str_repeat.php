@@ -27,11 +27,11 @@ $output = safe_call(function () use ($model) {
       <form class="pt-1">
         <?= html_form_common() ?>
         <div class="mb-3 row">
-          <?=html_input_arg($model, "string",
+          <?=html_input_text($model, "string",
             "The string to be repeated.")?>
         </div>
         <div class="mb-3 row">
-          <?=html_input_arg($model, "times",
+          <?=html_input_text($model, "times",
             "Number of time the string should be repeated. <code>Times</code> has to be greater than or equal
             to 0. If the <code>times</code> is set to 0, the function will return an empty string.")?>
         </div>

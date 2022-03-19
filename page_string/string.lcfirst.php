@@ -1,17 +1,17 @@
 <?php
 
 $info = [
-  "name" => "crc32",
-  "description" => "calculates the crc32 polynomial of a string",
-  "signature" => 'crc32(string $string): int'
+  "name" => "lcfirst",
+  "description" => "Make a string's first character lowercase",
+  "signature" => 'lcfirst(string $string): string'
 ];
 
 $model = [
-  "string" => get_param("string", "hello"),
+  "string" => get_param("string", "HelloWorld"),
 ];
 
 $output = safe_call(function () use ($model) {
-  return crc32($model["string"]);
+  return lcfirst($model["string"]);
 });
 
 ?>
@@ -26,13 +26,13 @@ $output = safe_call(function () use ($model) {
         <?= html_form_common() ?>
         <div class="mb-3 row">
           <?=html_input_text($model, "string",
-            "The data.")?>
+            "The input string.")?>
         </div>
         <div class="mb-3 d-flex justify-content-end">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
         <div class="mt-3">
-          <?=html_call_result($output, help: "Returns the crc32 checksum of string as an integer.") ?>
+          <?=html_call_result($output, help: "Returns the resulting string.") ?>
         </div>
       </form>
     </di>

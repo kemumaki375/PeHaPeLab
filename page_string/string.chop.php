@@ -1,18 +1,18 @@
 <?php
 
 $info = [
-  "name" => "addcslashes",
-  "description" => "Quote string with slashes in a C style",
-  "signature" => "addcslashes(string \$string, string \$characters): string"
+  "name" => "chop",
+  "description" => "Alias of rtrim()",
+  "signature" => "this function is an alias of: rtrim()."
 ];
 
 $model = [
-  "string" => get_param("string", "This text does NOT contain \\n a new-line!"),
-  "characters" => get_param("characters", "\\\\"),
+  "string" => get_param("string", "\t\tThese are a few words :) ...  "),
+  "characters" => get_param("characters", " \t."),
 ];
 
 $output = safe_call(function () use ($model) {
-  return addcslashes($model["string"], $model["characters"]);
+  return chop($model["string"], $model["characters"]);
 });
 
 ?>
@@ -23,21 +23,21 @@ $output = safe_call(function () use ($model) {
       <?= html_info($info) ?>
     </div>
     <di class="card-body">
-      <form class="pt-1">
+      <form class="mb-2">
         <?= html_form_common() ?>
         <div class="mb-3 row">
           <?=html_input_text($model, "string",
-            "The data.")?>
+            "The input string.")?>
         </div>
         <div class="mb-3 row">
           <?=html_input_text($model, "characters",
-            "A list of characters to be escaped.")?>
+            "You can also specify the characters you want to strip, by means of the characters parameter. Simply list all characters that you want to be stripped. With .. you can specify a range of characters.")?>
         </div>
         <div class="mb-3 d-flex justify-content-end">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
         <div class="mt-3">
-          <?=html_call_result($output, help: "Returns the escaped string.") ?>
+          <?=html_call_result($output) ?>
         </div>
       </form>
     </di>

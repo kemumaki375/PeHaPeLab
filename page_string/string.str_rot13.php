@@ -26,7 +26,7 @@ $output = safe_call(function () use ($model) {
       <form class="pt-1">
         <?= html_form_common() ?>
         <div class="mb-3 row">
-          <?=html_input_arg($model, "string",
+          <?=html_input_text($model, "string",
             "The input string.")?>
         </div>
         <div class="mb-3 d-flex justify-content-end">
