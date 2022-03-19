@@ -26,10 +26,10 @@
         <main class="col">
             <div>
                 <div class="row">
-                    <div class="col col-sm-12">
+                    <div class="col-md-8 col-xs-12">
                         <?php include_once get_page() ?>
                     </div>
-                    <div class="col-3 offset-md-1 mt-2">
+                    <div class="col offset-md-1 mt-2">
                         <!--
                         <h4>Examples</h4>
                         <ul class="list-group">
