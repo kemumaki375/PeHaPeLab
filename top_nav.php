@@ -10,7 +10,7 @@
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sources</a>
+          <a class="nav-link" href="https://github.com/kemumaki375/PeHaPeLab">Source Code</a>
         </li>
 
 
