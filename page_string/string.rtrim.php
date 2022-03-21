@@ -22,7 +22,7 @@ $output = safe_call(function () use ($model) {
     <div class="card-header">
       <?= html_info($info) ?>
     </div>
-    <di class="card-body">
+    <div class="card-body">
       <form class="mb-2">
         <?= html_form_common() ?>
         <div class="mb-3 row">
@@ -40,6 +40,6 @@ $output = safe_call(function () use ($model) {
           <?=html_call_result($output) ?>
         </div>
       </form>
-    </di>
+    </div>
   </div>
 </div>

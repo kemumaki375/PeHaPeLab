@@ -27,7 +27,8 @@ function safe_call(callable $func): string
   }
 }
 
-function get_param(string $param, string $default) {
+function get_param(string $param, string $default)
+{
   if (isset($_GET['ts'])) {
     return $_GET[$param] ?? null;
   } else {
@@ -41,8 +42,9 @@ function html_title() : string
   return (isset($fn) ? $fn . " - " : "") . "PeHaPe Lab";
 }
 
-function html_form_common() : string {
-  return html_fn().html_ts();
+function html_form_common() : string
+{
+  return html_fn() . html_ts();
 }
 
 function html_fn() : string{
